@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+// Define the package name.
+package com.grpcex.grpc;
+
+// Exprt the package with many files rather than one.
+option java_multiple_files = true;
+// Define the package name.
+option java_package = "com.grpcex.grpc";
+
+// Service implementation; method. Leveraging interface.
+service GreetingService {
+    // Method name: Greeting.
+    // Parameter: GreetingRequest.
+    // Return: GreetingResponse.
+    rpc Greeting(GreetingRequest) returns (GreetingResponse) {}
+}
+
+// Podules: Define the request name, and the properties of the service.
+message GreetingRequest {
+    string message = 1; // Number of the field is the binary representation of the request.
+}
+
+// Podules: Define the response to the request and its properties.
+message GreetingResponse {
+    string message = 1; // Number of the field is the binary representation of the response.
+}
