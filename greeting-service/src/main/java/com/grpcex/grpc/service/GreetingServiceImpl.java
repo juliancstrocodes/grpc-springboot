@@ -5,9 +5,10 @@ import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
 
 @GrpcService
-public class GreetingServiceImpl extends GreetingServiceGr {
+public class GreetingServiceImpl extends GreetingServiceGrpc.GreetingServiceImplBase {
+    
     @Override
-    public void Greeting(GreetingRequest request, StreamObserver<GreetingResponse> responseObserver) {
+    public void greeting(GreetingRequest request, StreamObserver<GreetingResponse> responseObserver) {
         String message = request.getMessage();
         System.out.println("Received message: " + message);
 

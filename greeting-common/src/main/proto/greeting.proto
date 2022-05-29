@@ -13,7 +13,7 @@ service GreetingService {
     // Method name: Greeting.
     // Parameter: GreetingRequest.
     // Return: GreetingResponse.
-    rpc Greeting(GreetingRequest) returns (GreetingResponse) {}
+    rpc greeting(GreetingRequest) returns (GreetingResponse) {}
 }
 
 // Podules: Define the request name, and the properties of the service.
